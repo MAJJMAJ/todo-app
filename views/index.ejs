@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+<header class="header">
+    <img src="/logo.png" alt="My Logo" class="logo" />
+  </header>
+<main class="container">
+  <h1>📝 My To-Do List</h1>
+  
+  
+  <form action="/add" method="POST" class="add-form">
+    <input type="text" name="task" placeholder="What needs to be done?" required />
+    <button type="submit">Add Task</button>
+  </form>
+
+  <ul class="task-list">
+    <% tasks.forEach(task => { %>
+      <li>
+        <span><%= task %></span>
+      </li>
+    <% }) %>
+  </ul>
+</main>
+
+<%- include('partials/footer') %>
